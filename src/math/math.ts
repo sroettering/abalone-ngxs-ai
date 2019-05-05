@@ -1,3 +1,8 @@
+export interface Position {
+    x: number;
+    y: number;
+}
+
 export interface CubePoint {
     x: number;
     y: number;
@@ -61,3 +66,11 @@ export const buildRing = (centerPoint: CubePoint, radius: number) => {
     }
     return ring;
 };
+
+export const axialToPosition = ({ q, r }: AxialPoint): Position => {
+    // pointy top
+    return {
+        x: Math.sqrt(3) * q + Math.sqrt(3) / 2 * r,
+        y: 1.5 * r,
+    };
+}
