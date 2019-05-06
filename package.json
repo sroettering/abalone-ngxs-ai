@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
     "@types/p5": "^0.7.2",
@@ -29,7 +30,9 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "@ngxs/store": "^3.4.3",
-    "p5": "^0.8.0"
+    "@types/redux": "^3.6.0",
+    "p5": "^0.8.0",
+    "redux": "^4.0.1",
+    "rxjs": "^6.5.1"
   }
 }

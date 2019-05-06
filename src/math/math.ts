@@ -67,10 +67,19 @@ export const buildRing = (centerPoint: CubePoint, radius: number) => {
     return ring;
 };
 
+export const buildGrid = (centerPoint: CubePoint, radius: number) => {
+    const gridPoints: AxialPoint[] = [cubeToAxial(centerPoint)];
+    for (let r = 0; r < radius; r++) {
+        const ring: AxialPoint[] = buildRing({ x: 0, y: 0, z: 0 }, r).map((cPoint: CubePoint) => cubeToAxial(cPoint));
+        gridPoints.push(...ring);
+    }
+    return gridPoints;
+};
+
 export const axialToPosition = ({ q, r }: AxialPoint): Position => {
     // pointy top
     return {
         x: Math.sqrt(3) * q + Math.sqrt(3) / 2 * r,
         y: 1.5 * r,
     };
-}
+};
